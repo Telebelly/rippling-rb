@@ -1,4 +1,4 @@
-# OpenapiClient::BulkCreateCustomObjectsCustomObjectApiNameRecordsRequest
+# RipplingRb::BulkCreateCustomObjectsCustomObjectApiNameRecordsRequest
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::BulkCreateCustomObjectsCustomObjectApiNameRecordsRequest.new(
+instance = RipplingRb::BulkCreateCustomObjectsCustomObjectApiNameRecordsRequest.new(
   rows_to_write: null,
   all_or_nothing: null
 )

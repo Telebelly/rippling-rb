@@ -1,4 +1,4 @@
-# OpenapiClient::EmploymentTypesApi
+# RipplingRb::EmploymentTypesApi
 
 All URIs are relative to *https://rest.ripplingapis.com*
 
@@ -20,9 +20,9 @@ Retrieve a specific employment type
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -30,14 +30,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EmploymentTypesApi.new
+api_instance = RipplingRb::EmploymentTypesApi.new
 id = 'id_example' # String | ID of the resource to return
 
 begin
   # Retrieve a specific employment type
   result = api_instance.get_employment_types(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling EmploymentTypesApi->get_employment_types: #{e}"
 end
 ```
@@ -55,7 +55,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetEmploymentTypes200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling EmploymentTypesApi->get_employment_types_with_http_info: #{e}"
 end
 ```
@@ -92,9 +92,9 @@ A List of employment types  - Requires: `API Tier 1`  - Sortable fields: `id`, `
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -102,7 +102,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EmploymentTypesApi.new
+api_instance = RipplingRb::EmploymentTypesApi.new
 opts = {
   order_by: 'order_by_example' # String | 
 }
@@ -111,7 +111,7 @@ begin
   # List employment types
   result = api_instance.list_employment_types(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling EmploymentTypesApi->list_employment_types: #{e}"
 end
 ```
@@ -129,7 +129,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListEmploymentTypes200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling EmploymentTypesApi->list_employment_types_with_http_info: #{e}"
 end
 ```

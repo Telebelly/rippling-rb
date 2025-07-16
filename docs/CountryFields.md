@@ -1,4 +1,4 @@
-# OpenapiClient::CountryFields
+# RipplingRb::CountryFields
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::CountryFields.new(
+instance = RipplingRb::CountryFields.new(
   us: null,
   ca: null
 )

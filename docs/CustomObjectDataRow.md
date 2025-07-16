@@ -1,4 +1,4 @@
-# OpenapiClient::CustomObjectDataRow
+# RipplingRb::CustomObjectDataRow
 
 ## Properties
 
@@ -17,9 +17,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::CustomObjectDataRow.new(
+instance = RipplingRb::CustomObjectDataRow.new(
   id: null,
   created_at: null,
   updated_at: null,

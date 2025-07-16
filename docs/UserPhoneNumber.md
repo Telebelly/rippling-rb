@@ -1,4 +1,4 @@
-# OpenapiClient::UserPhoneNumber
+# RipplingRb::UserPhoneNumber
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::UserPhoneNumber.new(
+instance = RipplingRb::UserPhoneNumber.new(
   value: null,
   type: null,
   display: null

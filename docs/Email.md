@@ -1,4 +1,4 @@
-# OpenapiClient::Email
+# RipplingRb::Email
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::Email.new(
+instance = RipplingRb::Email.new(
   value: null,
   type: null,
   display: null

@@ -1,4 +1,4 @@
-# OpenapiClient::CreateCustomObjectsCustomObjectApiNameRecords200Response
+# RipplingRb::CreateCustomObjectsCustomObjectApiNameRecords200Response
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::CreateCustomObjectsCustomObjectApiNameRecords200Response.new(
+instance = RipplingRb::CreateCustomObjectsCustomObjectApiNameRecords200Response.new(
   data: null
 )
 ```

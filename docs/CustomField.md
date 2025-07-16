@@ -1,4 +1,4 @@
-# OpenapiClient::CustomField
+# RipplingRb::CustomField
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::CustomField.new(
+instance = RipplingRb::CustomField.new(
   id: null,
   created_at: null,
   updated_at: null,

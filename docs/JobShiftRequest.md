@@ -1,4 +1,4 @@
-# OpenapiClient::JobShiftRequest
+# RipplingRb::JobShiftRequest
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::JobShiftRequest.new(
+instance = RipplingRb::JobShiftRequest.new(
   start_time: null,
   end_time: null,
   duration: null,

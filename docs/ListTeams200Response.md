@@ -1,4 +1,4 @@
-# OpenapiClient::ListTeams200Response
+# RipplingRb::ListTeams200Response
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::ListTeams200Response.new(
+instance = RipplingRb::ListTeams200Response.new(
   __meta: null,
   results: null,
   next_link: null

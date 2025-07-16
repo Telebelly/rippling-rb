@@ -1,4 +1,4 @@
-# OpenapiClient::LeaveType
+# RipplingRb::LeaveType
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::LeaveType.new(
+instance = RipplingRb::LeaveType.new(
   id: null,
   created_at: null,
   updated_at: null,

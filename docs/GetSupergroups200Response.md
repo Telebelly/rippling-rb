@@ -1,4 +1,4 @@
-# OpenapiClient::GetSupergroups200Response
+# RipplingRb::GetSupergroups200Response
 
 ## Properties
 
@@ -28,9 +28,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::GetSupergroups200Response.new(
+instance = RipplingRb::GetSupergroups200Response.new(
   __meta: null,
   id: null,
   created_at: null,

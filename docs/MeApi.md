@@ -1,4 +1,4 @@
-# OpenapiClient::MeApi
+# RipplingRb::MeApi
 
 All URIs are relative to *https://rest.ripplingapis.com*
 
@@ -19,9 +19,9 @@ SSO information of the current user  - Requires: `API Tier 1`  - Expandable fiel
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -29,7 +29,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::MeApi.new
+api_instance = RipplingRb::MeApi.new
 opts = {
   expand: 'expand_example' # String | 
 }
@@ -38,7 +38,7 @@ begin
   # Retrieve my SSO information
   result = api_instance.list_sso_me(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling MeApi->list_sso_me: #{e}"
 end
 ```
@@ -56,7 +56,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SSOMe>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling MeApi->list_sso_me_with_http_info: #{e}"
 end
 ```

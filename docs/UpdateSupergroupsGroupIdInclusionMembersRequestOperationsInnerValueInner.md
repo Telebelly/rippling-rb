@@ -1,4 +1,4 @@
-# OpenapiClient::UpdateSupergroupsGroupIdInclusionMembersRequestOperationsInnerValueInner
+# RipplingRb::UpdateSupergroupsGroupIdInclusionMembersRequestOperationsInnerValueInner
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::UpdateSupergroupsGroupIdInclusionMembersRequestOperationsInnerValueInner.new(
+instance = RipplingRb::UpdateSupergroupsGroupIdInclusionMembersRequestOperationsInnerValueInner.new(
   id: null
 )
 ```

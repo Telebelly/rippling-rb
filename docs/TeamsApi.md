@@ -1,4 +1,4 @@
-# OpenapiClient::TeamsApi
+# RipplingRb::TeamsApi
 
 All URIs are relative to *https://rest.ripplingapis.com*
 
@@ -20,9 +20,9 @@ Retrieve a specific team
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -30,7 +30,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::TeamsApi.new
+api_instance = RipplingRb::TeamsApi.new
 id = 'id_example' # String | ID of the resource to return
 opts = {
   expand: 'expand_example' # String | 
@@ -40,7 +40,7 @@ begin
   # Retrieve a specific team
   result = api_instance.get_teams(id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling TeamsApi->get_teams: #{e}"
 end
 ```
@@ -58,7 +58,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetTeams200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling TeamsApi->get_teams_with_http_info: #{e}"
 end
 ```
@@ -96,9 +96,9 @@ A List of teams  - Requires: `API Tier 1`  - Expandable fields: `parent`  - Sort
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -106,7 +106,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::TeamsApi.new
+api_instance = RipplingRb::TeamsApi.new
 opts = {
   expand: 'expand_example', # String | 
   order_by: 'order_by_example' # String | 
@@ -116,7 +116,7 @@ begin
   # List teams
   result = api_instance.list_teams(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling TeamsApi->list_teams: #{e}"
 end
 ```
@@ -134,7 +134,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListTeams200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling TeamsApi->list_teams_with_http_info: #{e}"
 end
 ```

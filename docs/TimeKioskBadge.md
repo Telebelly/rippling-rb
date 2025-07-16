@@ -1,4 +1,4 @@
-# OpenapiClient::TimeKioskBadge
+# RipplingRb::TimeKioskBadge
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::TimeKioskBadge.new(
+instance = RipplingRb::TimeKioskBadge.new(
   id: null,
   created_at: null,
   updated_at: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::Team
+# RipplingRb::Team
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::Team.new(
+instance = RipplingRb::Team.new(
   id: null,
   created_at: null,
   updated_at: null,

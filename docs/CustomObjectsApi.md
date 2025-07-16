@@ -1,4 +1,4 @@
-# OpenapiClient::CustomObjectsApi
+# RipplingRb::CustomObjectsApi
 
 All URIs are relative to *https://rest.ripplingapis.com*
 
@@ -23,9 +23,9 @@ Create a new custom object
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -33,16 +33,16 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomObjectsApi.new
+api_instance = RipplingRb::CustomObjectsApi.new
 opts = {
-  create_custom_objects_request: OpenapiClient::CreateCustomObjectsRequest.new # CreateCustomObjectsRequest | 
+  create_custom_objects_request: RipplingRb::CreateCustomObjectsRequest.new # CreateCustomObjectsRequest | 
 }
 
 begin
   # Create a new custom object
   result = api_instance.create_custom_objects(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling CustomObjectsApi->create_custom_objects: #{e}"
 end
 ```
@@ -60,7 +60,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CustomObject>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling CustomObjectsApi->create_custom_objects_with_http_info: #{e}"
 end
 ```
@@ -95,9 +95,9 @@ Delete a custom object
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -105,13 +105,13 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomObjectsApi.new
+api_instance = RipplingRb::CustomObjectsApi.new
 custom_object_api_name = 'custom_object_api_name_example' # String | 
 
 begin
   # Delete a custom object
   api_instance.delete_custom_objects(custom_object_api_name)
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling CustomObjectsApi->delete_custom_objects: #{e}"
 end
 ```
@@ -129,7 +129,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling CustomObjectsApi->delete_custom_objects_with_http_info: #{e}"
 end
 ```
@@ -166,9 +166,9 @@ Retrieve a specific custom object
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -176,14 +176,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomObjectsApi.new
+api_instance = RipplingRb::CustomObjectsApi.new
 custom_object_api_name = 'custom_object_api_name_example' # String | 
 
 begin
   # Retrieve a specific custom object
   result = api_instance.get_custom_objects(custom_object_api_name)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling CustomObjectsApi->get_custom_objects: #{e}"
 end
 ```
@@ -201,7 +201,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CustomObject>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling CustomObjectsApi->get_custom_objects_with_http_info: #{e}"
 end
 ```
@@ -238,9 +238,9 @@ A List of custom objects  - Requires: `API Tier 1`
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -248,13 +248,13 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomObjectsApi.new
+api_instance = RipplingRb::CustomObjectsApi.new
 
 begin
   # List custom objects
   result = api_instance.list_custom_objects
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling CustomObjectsApi->list_custom_objects: #{e}"
 end
 ```
@@ -272,7 +272,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListCustomObjects200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling CustomObjectsApi->list_custom_objects_with_http_info: #{e}"
 end
 ```
@@ -307,9 +307,9 @@ Updated a specific custom object
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -317,17 +317,17 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomObjectsApi.new
+api_instance = RipplingRb::CustomObjectsApi.new
 custom_object_api_name = 'custom_object_api_name_example' # String | 
 opts = {
-  update_custom_objects_request: OpenapiClient::UpdateCustomObjectsRequest.new # UpdateCustomObjectsRequest | 
+  update_custom_objects_request: RipplingRb::UpdateCustomObjectsRequest.new # UpdateCustomObjectsRequest | 
 }
 
 begin
   # Update a custom object
   result = api_instance.update_custom_objects(custom_object_api_name, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling CustomObjectsApi->update_custom_objects: #{e}"
 end
 ```
@@ -345,7 +345,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CustomObject>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling CustomObjectsApi->update_custom_objects_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::DepartmentsApi
+# RipplingRb::DepartmentsApi
 
 All URIs are relative to *https://rest.ripplingapis.com*
 
@@ -20,9 +20,9 @@ Retrieve a specific department
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -30,7 +30,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DepartmentsApi.new
+api_instance = RipplingRb::DepartmentsApi.new
 id = 'id_example' # String | ID of the resource to return
 opts = {
   expand: 'expand_example' # String | 
@@ -40,7 +40,7 @@ begin
   # Retrieve a specific department
   result = api_instance.get_departments(id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling DepartmentsApi->get_departments: #{e}"
 end
 ```
@@ -58,7 +58,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetDepartments200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling DepartmentsApi->get_departments_with_http_info: #{e}"
 end
 ```
@@ -96,9 +96,9 @@ A List of departments  - Requires: `API Tier 1`  - Expandable fields: `parent`  
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -106,7 +106,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DepartmentsApi.new
+api_instance = RipplingRb::DepartmentsApi.new
 opts = {
   expand: 'expand_example', # String | 
   order_by: 'order_by_example' # String | 
@@ -116,7 +116,7 @@ begin
   # List departments
   result = api_instance.list_departments(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling DepartmentsApi->list_departments: #{e}"
 end
 ```
@@ -134,7 +134,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListDepartments200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling DepartmentsApi->list_departments_with_http_info: #{e}"
 end
 ```

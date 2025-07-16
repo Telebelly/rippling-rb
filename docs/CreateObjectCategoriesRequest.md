@@ -1,4 +1,4 @@
-# OpenapiClient::CreateObjectCategoriesRequest
+# RipplingRb::CreateObjectCategoriesRequest
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::CreateObjectCategoriesRequest.new(
+instance = RipplingRb::CreateObjectCategoriesRequest.new(
   name: null,
   description: null
 )

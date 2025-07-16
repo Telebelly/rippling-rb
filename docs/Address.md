@@ -1,4 +1,4 @@
-# OpenapiClient::Address
+# RipplingRb::Address
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::Address.new(
+instance = RipplingRb::Address.new(
   type: null,
   formatted: null,
   street_address: null,

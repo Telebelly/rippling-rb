@@ -1,4 +1,4 @@
-# OpenapiClient::Premiums
+# RipplingRb::Premiums
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::Premiums.new(
+instance = RipplingRb::Premiums.new(
   name: null,
   premium_rate: null,
   premium_hours: null

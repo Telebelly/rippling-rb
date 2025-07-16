@@ -1,4 +1,4 @@
-# OpenapiClient::TimeEntry
+# RipplingRb::TimeEntry
 
 ## Properties
 
@@ -30,9 +30,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::TimeEntry.new(
+instance = RipplingRb::TimeEntry.new(
   id: null,
   created_at: null,
   updated_at: null,

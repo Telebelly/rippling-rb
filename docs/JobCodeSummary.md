@@ -1,4 +1,4 @@
-# OpenapiClient::JobCodeSummary
+# RipplingRb::JobCodeSummary
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::JobCodeSummary.new(
+instance = RipplingRb::JobCodeSummary.new(
   job_codes_id: null,
   hours_worked: null
 )

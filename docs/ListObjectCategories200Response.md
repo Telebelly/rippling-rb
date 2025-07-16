@@ -1,4 +1,4 @@
-# OpenapiClient::ListObjectCategories200Response
+# RipplingRb::ListObjectCategories200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::ListObjectCategories200Response.new(
+instance = RipplingRb::ListObjectCategories200Response.new(
   results: null,
   next_link: null
 )

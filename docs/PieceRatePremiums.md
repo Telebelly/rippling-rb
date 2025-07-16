@@ -1,4 +1,4 @@
-# OpenapiClient::PieceRatePremiums
+# RipplingRb::PieceRatePremiums
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::PieceRatePremiums.new(
+instance = RipplingRb::PieceRatePremiums.new(
   name: null,
   premium_rate: null,
   premium_units: null

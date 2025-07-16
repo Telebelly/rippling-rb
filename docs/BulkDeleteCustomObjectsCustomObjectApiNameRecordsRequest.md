@@ -1,4 +1,4 @@
-# OpenapiClient::BulkDeleteCustomObjectsCustomObjectApiNameRecordsRequest
+# RipplingRb::BulkDeleteCustomObjectsCustomObjectApiNameRecordsRequest
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::BulkDeleteCustomObjectsCustomObjectApiNameRecordsRequest.new(
+instance = RipplingRb::BulkDeleteCustomObjectsCustomObjectApiNameRecordsRequest.new(
   rows_to_delete: null,
   all_or_nothing: null
 )

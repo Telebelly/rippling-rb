@@ -1,4 +1,4 @@
-# OpenapiClient::TimeEntryComment
+# RipplingRb::TimeEntryComment
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::TimeEntryComment.new(
+instance = RipplingRb::TimeEntryComment.new(
   created_at: null,
   author_id: null,
   text: null

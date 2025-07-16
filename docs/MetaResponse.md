@@ -1,4 +1,4 @@
-# OpenapiClient::MetaResponse
+# RipplingRb::MetaResponse
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::MetaResponse.new(
+instance = RipplingRb::MetaResponse.new(
   __meta: null
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::ObjectCategory
+# RipplingRb::ObjectCategory
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::ObjectCategory.new(
+instance = RipplingRb::ObjectCategory.new(
   id: null,
   created_at: null,
   updated_at: null,

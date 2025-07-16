@@ -1,4 +1,4 @@
-# OpenapiClient::SSOMe
+# RipplingRb::SSOMe
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::SSOMe.new(
+instance = RipplingRb::SSOMe.new(
   id: null,
   created_at: null,
   updated_at: null,

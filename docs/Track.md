@@ -1,4 +1,4 @@
-# OpenapiClient::Track
+# RipplingRb::Track
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::Track.new(
+instance = RipplingRb::Track.new(
   id: null,
   created_at: null,
   updated_at: null,

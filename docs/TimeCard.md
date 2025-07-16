@@ -1,4 +1,4 @@
-# OpenapiClient::TimeCard
+# RipplingRb::TimeCard
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::TimeCard.new(
+instance = RipplingRb::TimeCard.new(
   id: null,
   created_at: null,
   updated_at: null,

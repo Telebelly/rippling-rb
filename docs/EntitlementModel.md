@@ -1,4 +1,4 @@
-# OpenapiClient::EntitlementModel
+# RipplingRb::EntitlementModel
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::EntitlementModel.new(
+instance = RipplingRb::EntitlementModel.new(
   id: null,
   description: null,
   display_name: null

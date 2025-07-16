@@ -1,4 +1,4 @@
-# OpenapiClient::GetTeams200Response
+# RipplingRb::GetTeams200Response
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::GetTeams200Response.new(
+instance = RipplingRb::GetTeams200Response.new(
   __meta: null,
   id: null,
   created_at: null,

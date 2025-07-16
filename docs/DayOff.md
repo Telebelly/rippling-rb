@@ -1,4 +1,4 @@
-# OpenapiClient::DayOff
+# RipplingRb::DayOff
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::DayOff.new(
+instance = RipplingRb::DayOff.new(
   date: null,
   number_of_minutes_taken_off: null
 )

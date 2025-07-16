@@ -1,4 +1,4 @@
-# OpenapiClient::RedactedField
+# RipplingRb::RedactedField
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::RedactedField.new(
+instance = RipplingRb::RedactedField.new(
   name: date_of_birth,
   reason: Insufficient entitlements
 )

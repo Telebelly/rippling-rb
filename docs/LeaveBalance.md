@@ -1,4 +1,4 @@
-# OpenapiClient::LeaveBalance
+# RipplingRb::LeaveBalance
 
 ## Properties
 
@@ -18,9 +18,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::LeaveBalance.new(
+instance = RipplingRb::LeaveBalance.new(
   id: null,
   created_at: null,
   updated_at: null,
