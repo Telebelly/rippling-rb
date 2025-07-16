@@ -1,4 +1,4 @@
-# OpenapiClient::ShiftInput
+# RipplingRb::ShiftInput
 
 ## Properties
 
@@ -18,9 +18,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::ShiftInput.new(
+instance = RipplingRb::ShiftInput.new(
   id: null,
   created_at: null,
   updated_at: null,

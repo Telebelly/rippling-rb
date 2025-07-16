@@ -1,4 +1,4 @@
-# OpenapiClient::TerminationDetails
+# RipplingRb::TerminationDetails
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::TerminationDetails.new(
+instance = RipplingRb::TerminationDetails.new(
   type: null,
   reason: null
 )

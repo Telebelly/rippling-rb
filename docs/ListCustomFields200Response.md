@@ -1,4 +1,4 @@
-# OpenapiClient::ListCustomFields200Response
+# RipplingRb::ListCustomFields200Response
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::ListCustomFields200Response.new(
+instance = RipplingRb::ListCustomFields200Response.new(
   __meta: null,
   results: null,
   next_link: null

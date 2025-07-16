@@ -1,4 +1,4 @@
-# OpenapiClient::GetDepartments200Response
+# RipplingRb::GetDepartments200Response
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::GetDepartments200Response.new(
+instance = RipplingRb::GetDepartments200Response.new(
   __meta: null,
   id: null,
   created_at: null,

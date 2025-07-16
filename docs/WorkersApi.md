@@ -1,4 +1,4 @@
-# OpenapiClient::WorkersApi
+# RipplingRb::WorkersApi
 
 All URIs are relative to *https://rest.ripplingapis.com*
 
@@ -20,9 +20,9 @@ Retrieve a specific worker
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -30,7 +30,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WorkersApi.new
+api_instance = RipplingRb::WorkersApi.new
 id = 'id_example' # String | ID of the resource to return
 opts = {
   expand: 'expand_example' # String | 
@@ -40,7 +40,7 @@ begin
   # Retrieve a specific worker
   result = api_instance.get_workers(id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling WorkersApi->get_workers: #{e}"
 end
 ```
@@ -58,7 +58,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetWorkers200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling WorkersApi->get_workers_with_http_info: #{e}"
 end
 ```
@@ -96,9 +96,9 @@ A List of workers  - Requires: `API Tier 1`  - Filterable fields: `status`, `wor
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -106,7 +106,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WorkersApi.new
+api_instance = RipplingRb::WorkersApi.new
 opts = {
   filter: 'filter_example', # String | 
   expand: 'expand_example', # String | 
@@ -117,7 +117,7 @@ begin
   # List workers
   result = api_instance.list_workers(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling WorkersApi->list_workers: #{e}"
 end
 ```
@@ -135,7 +135,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListWorkers200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling WorkersApi->list_workers_with_http_info: #{e}"
 end
 ```

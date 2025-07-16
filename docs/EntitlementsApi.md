@@ -1,4 +1,4 @@
-# OpenapiClient::EntitlementsApi
+# RipplingRb::EntitlementsApi
 
 All URIs are relative to *https://rest.ripplingapis.com*
 
@@ -19,9 +19,9 @@ A List of entitlements  - Requires: `API Tier 1`
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -29,13 +29,13 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EntitlementsApi.new
+api_instance = RipplingRb::EntitlementsApi.new
 
 begin
   # List entitlements
   result = api_instance.list_entitlements
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling EntitlementsApi->list_entitlements: #{e}"
 end
 ```
@@ -53,7 +53,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListEntitlements200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling EntitlementsApi->list_entitlements_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::UsersApi
+# RipplingRb::UsersApi
 
 All URIs are relative to *https://rest.ripplingapis.com*
 
@@ -20,9 +20,9 @@ Retrieve a specific user
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -30,14 +30,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = RipplingRb::UsersApi.new
 id = 'id_example' # String | ID of the resource to return
 
 begin
   # Retrieve a specific user
   result = api_instance.get_users(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling UsersApi->get_users: #{e}"
 end
 ```
@@ -55,7 +55,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetUsers200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling UsersApi->get_users_with_http_info: #{e}"
 end
 ```
@@ -92,9 +92,9 @@ A List of users  - Requires: `API Tier 1`  - Sortable fields: `id`, `created_at`
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -102,7 +102,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::UsersApi.new
+api_instance = RipplingRb::UsersApi.new
 opts = {
   order_by: 'order_by_example' # String | 
 }
@@ -111,7 +111,7 @@ begin
   # List users
   result = api_instance.list_users(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling UsersApi->list_users: #{e}"
 end
 ```
@@ -129,7 +129,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListUsers200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling UsersApi->list_users_with_http_info: #{e}"
 end
 ```

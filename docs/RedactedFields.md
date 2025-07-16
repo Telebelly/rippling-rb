@@ -1,4 +1,4 @@
-# OpenapiClient::RedactedFields
+# RipplingRb::RedactedFields
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::RedactedFields.new(
+instance = RipplingRb::RedactedFields.new(
   redacted_fields: null
 )
 ```

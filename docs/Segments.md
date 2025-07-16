@@ -1,4 +1,4 @@
-# OpenapiClient::Segments
+# RipplingRb::Segments
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::Segments.new(
+instance = RipplingRb::Segments.new(
   start_time: null,
   end_time: null,
   job_codes_id: null,

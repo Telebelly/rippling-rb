@@ -1,4 +1,4 @@
-# OpenapiClient::Level
+# RipplingRb::Level
 
 ## Properties
 
@@ -19,9 +19,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::Level.new(
+instance = RipplingRb::Level.new(
   id: null,
   created_at: null,
   updated_at: null,

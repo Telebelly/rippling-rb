@@ -1,4 +1,4 @@
-# OpenapiClient::PrototypeJob
+# RipplingRb::PrototypeJob
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::PrototypeJob.new(
+instance = RipplingRb::PrototypeJob.new(
   id: null,
   created_at: null,
   updated_at: null,

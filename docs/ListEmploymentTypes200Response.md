@@ -1,4 +1,4 @@
-# OpenapiClient::ListEmploymentTypes200Response
+# RipplingRb::ListEmploymentTypes200Response
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::ListEmploymentTypes200Response.new(
+instance = RipplingRb::ListEmploymentTypes200Response.new(
   __meta: null,
   results: null,
   next_link: null

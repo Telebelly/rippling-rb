@@ -1,4 +1,4 @@
-# OpenapiClient::ObjectCategoriesApi
+# RipplingRb::ObjectCategoriesApi
 
 All URIs are relative to *https://rest.ripplingapis.com*
 
@@ -23,9 +23,9 @@ Create a new object category
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -33,16 +33,16 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ObjectCategoriesApi.new
+api_instance = RipplingRb::ObjectCategoriesApi.new
 opts = {
-  create_object_categories_request: OpenapiClient::CreateObjectCategoriesRequest.new # CreateObjectCategoriesRequest | 
+  create_object_categories_request: RipplingRb::CreateObjectCategoriesRequest.new # CreateObjectCategoriesRequest | 
 }
 
 begin
   # Create a new object category
   result = api_instance.create_object_categories(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling ObjectCategoriesApi->create_object_categories: #{e}"
 end
 ```
@@ -60,7 +60,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ObjectCategory>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling ObjectCategoriesApi->create_object_categories_with_http_info: #{e}"
 end
 ```
@@ -95,9 +95,9 @@ Delete a object category
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -105,13 +105,13 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ObjectCategoriesApi.new
+api_instance = RipplingRb::ObjectCategoriesApi.new
 id = 'id_example' # String | 
 
 begin
   # Delete a object category
   api_instance.delete_object_categories(id)
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling ObjectCategoriesApi->delete_object_categories: #{e}"
 end
 ```
@@ -129,7 +129,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling ObjectCategoriesApi->delete_object_categories_with_http_info: #{e}"
 end
 ```
@@ -166,9 +166,9 @@ Retrieve a specific object category
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -176,14 +176,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ObjectCategoriesApi.new
+api_instance = RipplingRb::ObjectCategoriesApi.new
 id = 'id_example' # String | 
 
 begin
   # Retrieve a specific object category
   result = api_instance.get_object_categories(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling ObjectCategoriesApi->get_object_categories: #{e}"
 end
 ```
@@ -201,7 +201,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ObjectCategory>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling ObjectCategoriesApi->get_object_categories_with_http_info: #{e}"
 end
 ```
@@ -238,9 +238,9 @@ A List of object categories  - Requires: `API Tier 1`
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -248,13 +248,13 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ObjectCategoriesApi.new
+api_instance = RipplingRb::ObjectCategoriesApi.new
 
 begin
   # List object categories
   result = api_instance.list_object_categories
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling ObjectCategoriesApi->list_object_categories: #{e}"
 end
 ```
@@ -272,7 +272,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListObjectCategories200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling ObjectCategoriesApi->list_object_categories_with_http_info: #{e}"
 end
 ```
@@ -307,9 +307,9 @@ Updated a specific object category
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -317,17 +317,17 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ObjectCategoriesApi.new
+api_instance = RipplingRb::ObjectCategoriesApi.new
 id = 'id_example' # String | 
 opts = {
-  create_object_categories_request: OpenapiClient::CreateObjectCategoriesRequest.new # CreateObjectCategoriesRequest | 
+  create_object_categories_request: RipplingRb::CreateObjectCategoriesRequest.new # CreateObjectCategoriesRequest | 
 }
 
 begin
   # Update a object category
   result = api_instance.update_object_categories(id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling ObjectCategoriesApi->update_object_categories: #{e}"
 end
 ```
@@ -345,7 +345,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ObjectCategory>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling ObjectCategoriesApi->update_object_categories_with_http_info: #{e}"
 end
 ```

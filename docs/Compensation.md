@@ -1,4 +1,4 @@
-# OpenapiClient::Compensation
+# RipplingRb::Compensation
 
 ## Properties
 
@@ -27,9 +27,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::Compensation.new(
+instance = RipplingRb::Compensation.new(
   id: null,
   created_at: null,
   updated_at: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::ListByQueryCustomObjectsCustomObjectApiNameRecords200Response
+# RipplingRb::ListByQueryCustomObjectsCustomObjectApiNameRecords200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::ListByQueryCustomObjectsCustomObjectApiNameRecords200Response.new(
+instance = RipplingRb::ListByQueryCustomObjectsCustomObjectApiNameRecords200Response.new(
   results: null,
   cursor: null
 )

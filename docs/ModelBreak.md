@@ -1,4 +1,4 @@
-# OpenapiClient::ModelBreak
+# RipplingRb::ModelBreak
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::ModelBreak.new(
+instance = RipplingRb::ModelBreak.new(
   start_time: null,
   end_time: null,
   original_start_time: null,

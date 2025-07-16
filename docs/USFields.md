@@ -1,4 +1,4 @@
-# OpenapiClient::USFields
+# RipplingRb::USFields
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::USFields.new(
+instance = RipplingRb::USFields.new(
   ssn: null
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::TimeCardSummary
+# RipplingRb::TimeCardSummary
 
 ## Properties
 
@@ -21,9 +21,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::TimeCardSummary.new(
+instance = RipplingRb::TimeCardSummary.new(
   earnings: null,
   hours_worked_by_job_code: null,
   premiums: null,

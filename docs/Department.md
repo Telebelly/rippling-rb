@@ -1,4 +1,4 @@
-# OpenapiClient::Department
+# RipplingRb::Department
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::Department.new(
+instance = RipplingRb::Department.new(
   id: null,
   created_at: null,
   updated_at: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::JobDimension
+# RipplingRb::JobDimension
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::JobDimension.new(
+instance = RipplingRb::JobDimension.new(
   id: null,
   created_at: null,
   updated_at: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::SupergroupsApi
+# RipplingRb::SupergroupsApi
 
 All URIs are relative to *https://rest.ripplingapis.com*
 
@@ -25,9 +25,9 @@ Retrieve a specific supergroup.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -35,14 +35,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SupergroupsApi.new
+api_instance = RipplingRb::SupergroupsApi.new
 id = 'id_example' # String | ID of the resource to return
 
 begin
   # Retrieve a specific supergroup
   result = api_instance.get_supergroups(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->get_supergroups: #{e}"
 end
 ```
@@ -60,7 +60,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetSupergroups200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->get_supergroups_with_http_info: #{e}"
 end
 ```
@@ -97,9 +97,9 @@ Retrieve supergroups matching the input parameters.  - Requires: `API Tier 1`  -
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -107,7 +107,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SupergroupsApi.new
+api_instance = RipplingRb::SupergroupsApi.new
 opts = {
   filter: 'filter_example', # String | 
   order_by: 'order_by_example' # String | 
@@ -117,7 +117,7 @@ begin
   # List supergroups
   result = api_instance.list_supergroups(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->list_supergroups: #{e}"
 end
 ```
@@ -135,7 +135,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListSupergroups200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->list_supergroups_with_http_info: #{e}"
 end
 ```
@@ -173,9 +173,9 @@ Retrieve supergroup exclusion members matching the input parameters.  - Requires
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -183,7 +183,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SupergroupsApi.new
+api_instance = RipplingRb::SupergroupsApi.new
 group_id = 'group_id_example' # String | 
 opts = {
   order_by: 'order_by_example' # String | 
@@ -193,7 +193,7 @@ begin
   # List supergroup exclusion members
   result = api_instance.list_supergroups__group_id_exclusion_members(group_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->list_supergroups__group_id_exclusion_members: #{e}"
 end
 ```
@@ -211,7 +211,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListSupergroupsGroupIdMembers200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->list_supergroups__group_id_exclusion_members_with_http_info: #{e}"
 end
 ```
@@ -249,9 +249,9 @@ Retrieve supergroup inclusion members matching the input parameters.  - Requires
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -259,7 +259,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SupergroupsApi.new
+api_instance = RipplingRb::SupergroupsApi.new
 group_id = 'group_id_example' # String | 
 opts = {
   order_by: 'order_by_example' # String | 
@@ -269,7 +269,7 @@ begin
   # List supergroup inclusion members
   result = api_instance.list_supergroups__group_id_inclusion_members(group_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->list_supergroups__group_id_inclusion_members: #{e}"
 end
 ```
@@ -287,7 +287,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListSupergroupsGroupIdMembers200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->list_supergroups__group_id_inclusion_members_with_http_info: #{e}"
 end
 ```
@@ -325,9 +325,9 @@ Retrieve supergroup members matching the input parameters.  - Requires: `API Tie
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -335,7 +335,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SupergroupsApi.new
+api_instance = RipplingRb::SupergroupsApi.new
 group_id = 'group_id_example' # String | 
 opts = {
   order_by: 'order_by_example' # String | 
@@ -345,7 +345,7 @@ begin
   # List supergroup members
   result = api_instance.list_supergroups__group_id_members(group_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->list_supergroups__group_id_members: #{e}"
 end
 ```
@@ -363,7 +363,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListSupergroupsGroupIdMembers200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->list_supergroups__group_id_members_with_http_info: #{e}"
 end
 ```
@@ -401,9 +401,9 @@ Update the list of supergroup exclusion members.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -411,17 +411,17 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SupergroupsApi.new
+api_instance = RipplingRb::SupergroupsApi.new
 group_id = 'group_id_example' # String | 
 opts = {
-  update_supergroups_group_id_inclusion_members_request: OpenapiClient::UpdateSupergroupsGroupIdInclusionMembersRequest.new # UpdateSupergroupsGroupIdInclusionMembersRequest | 
+  update_supergroups_group_id_inclusion_members_request: RipplingRb::UpdateSupergroupsGroupIdInclusionMembersRequest.new # UpdateSupergroupsGroupIdInclusionMembersRequest | 
 }
 
 begin
   # Update supergroup exclusion members
   result = api_instance.update_supergroups__group_id_exclusion_members(group_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->update_supergroups__group_id_exclusion_members: #{e}"
 end
 ```
@@ -439,7 +439,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateSupergroupsGroupIdInclusionMembers200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->update_supergroups__group_id_exclusion_members_with_http_info: #{e}"
 end
 ```
@@ -477,9 +477,9 @@ Update the list of supergroup inclusion members.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'rippling-rb'
 # setup authorization
-OpenapiClient.configure do |config|
+RipplingRb.configure do |config|
   # Configure OAuth2 access token for authorization: OAuth2Production
   config.access_token = 'YOUR ACCESS TOKEN'
 
@@ -487,17 +487,17 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SupergroupsApi.new
+api_instance = RipplingRb::SupergroupsApi.new
 group_id = 'group_id_example' # String | 
 opts = {
-  update_supergroups_group_id_inclusion_members_request: OpenapiClient::UpdateSupergroupsGroupIdInclusionMembersRequest.new # UpdateSupergroupsGroupIdInclusionMembersRequest | 
+  update_supergroups_group_id_inclusion_members_request: RipplingRb::UpdateSupergroupsGroupIdInclusionMembersRequest.new # UpdateSupergroupsGroupIdInclusionMembersRequest | 
 }
 
 begin
   # Update supergroup inclusion members
   result = api_instance.update_supergroups__group_id_inclusion_members(group_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->update_supergroups__group_id_inclusion_members: #{e}"
 end
 ```
@@ -515,7 +515,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <UpdateSupergroupsGroupIdInclusionMembers200Response>
-rescue OpenapiClient::ApiError => e
+rescue RipplingRb::ApiError => e
   puts "Error when calling SupergroupsApi->update_supergroups__group_id_inclusion_members_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::PayPeriodRequest
+# RipplingRb::PayPeriodRequest
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'rippling-rb'
 
-instance = OpenapiClient::PayPeriodRequest.new(
+instance = RipplingRb::PayPeriodRequest.new(
   start_date: null,
   end_date: null,
   pay_schedule_id: null
