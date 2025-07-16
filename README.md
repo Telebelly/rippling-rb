@@ -74,18 +74,18 @@ RipplingRb.configure do |config|
   config.configure_faraday_connection { |connection| 'YOUR CONNECTION CONFIG PROC' }
 end
 
-api_instance = RipplingRb::CompaniesApi.new
+api_instance = RipplingRb::CandidateApplicationsApi.new
 opts = {
   expand: 'expand_example', # String | 
   order_by: 'order_by_example' # String | 
 }
 
 begin
-  #List companies
-  result = api_instance.list_companies(opts)
+  #List candidate applications
+  result = api_instance.list_candidate_applications(opts)
   p result
 rescue RipplingRb::ApiError => e
-  puts "Exception when calling CompaniesApi->list_companies: #{e}"
+  puts "Exception when calling CandidateApplicationsApi->list_candidate_applications: #{e}"
 end
 
 ```
@@ -96,7 +96,11 @@ All URIs are relative to *https://rest.ripplingapis.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*RipplingRb::CandidateApplicationsApi* | [**list_candidate_applications**](docs/CandidateApplicationsApi.md#list_candidate_applications) | **GET** /candidate-applications | List candidate applications
+*RipplingRb::CandidatesApi* | [**list_candidates**](docs/CandidatesApi.md#list_candidates) | **GET** /candidates | List candidates
 *RipplingRb::CompaniesApi* | [**list_companies**](docs/CompaniesApi.md#list_companies) | **GET** /companies | List companies
+*RipplingRb::CompensationsApi* | [**get_compensations**](docs/CompensationsApi.md#get_compensations) | **GET** /compensations/{id} | Retrieve a specific compensation
+*RipplingRb::CompensationsApi* | [**list_compensations**](docs/CompensationsApi.md#list_compensations) | **GET** /compensations | List compensations
 *RipplingRb::CustomFieldsApi* | [**list_custom_fields**](docs/CustomFieldsApi.md#list_custom_fields) | **GET** /custom-fields | List custom fields
 *RipplingRb::CustomObjectFieldsApi* | [**create_custom_objects__custom_object_api_name_fields**](docs/CustomObjectFieldsApi.md#create_custom_objects__custom_object_api_name_fields) | **POST** /custom-objects/{custom_object_api_name}/fields/ | Create a new custom object field
 *RipplingRb::CustomObjectFieldsApi* | [**delete_custom_objects__custom_object_api_name_fields**](docs/CustomObjectFieldsApi.md#delete_custom_objects__custom_object_api_name_fields) | **DELETE** /custom-objects/{custom_object_api_name}/fields/{field_api_name}/ | Delete a custom object field
@@ -123,12 +127,43 @@ Class | Method | HTTP request | Description
 *RipplingRb::EmploymentTypesApi* | [**get_employment_types**](docs/EmploymentTypesApi.md#get_employment_types) | **GET** /employment-types/{id} | Retrieve a specific employment type
 *RipplingRb::EmploymentTypesApi* | [**list_employment_types**](docs/EmploymentTypesApi.md#list_employment_types) | **GET** /employment-types | List employment types
 *RipplingRb::EntitlementsApi* | [**list_entitlements**](docs/EntitlementsApi.md#list_entitlements) | **GET** /entitlements | List entitlements
+*RipplingRb::JobApi* | [**create_job_codes**](docs/JobApi.md#create_job_codes) | **POST** /job-codes | Create a new job code
+*RipplingRb::JobApi* | [**create_job_dimensions**](docs/JobApi.md#create_job_dimensions) | **POST** /job-dimensions | Create a new job dimension
+*RipplingRb::JobApi* | [**delete_job_codes**](docs/JobApi.md#delete_job_codes) | **DELETE** /job-codes/{id} | Delete a job code
+*RipplingRb::JobApi* | [**delete_job_dimensions**](docs/JobApi.md#delete_job_dimensions) | **DELETE** /job-dimensions/{id} | Delete a job dimension
+*RipplingRb::JobApi* | [**get_job_codes**](docs/JobApi.md#get_job_codes) | **GET** /job-codes/{id} | Retrieve a specific job code
+*RipplingRb::JobApi* | [**get_job_dimensions**](docs/JobApi.md#get_job_dimensions) | **GET** /job-dimensions/{id} | Retrieve a specific job dimension
+*RipplingRb::JobApi* | [**list_job_codes**](docs/JobApi.md#list_job_codes) | **GET** /job-codes | List job codes
+*RipplingRb::JobApi* | [**list_job_dimensions**](docs/JobApi.md#list_job_dimensions) | **GET** /job-dimensions | List job dimensions
+*RipplingRb::JobApi* | [**update_job_codes**](docs/JobApi.md#update_job_codes) | **PATCH** /job-codes/{id} | Update a job code
+*RipplingRb::JobApi* | [**update_job_dimensions**](docs/JobApi.md#update_job_dimensions) | **PATCH** /job-dimensions/{id} | Update a job dimension
+*RipplingRb::JobRequisitionsApi* | [**list_job_requisitions**](docs/JobRequisitionsApi.md#list_job_requisitions) | **GET** /job-requisitions | List job requisitions
+*RipplingRb::KioskBadgeApi* | [**create_kiosk_badges**](docs/KioskBadgeApi.md#create_kiosk_badges) | **POST** /kiosk-badges | Create a new kiosk badge
+*RipplingRb::KioskBadgeApi* | [**delete_kiosk_badges**](docs/KioskBadgeApi.md#delete_kiosk_badges) | **DELETE** /kiosk-badges/{id} | Delete a kiosk badge
+*RipplingRb::KioskBadgeApi* | [**get_kiosk_badges**](docs/KioskBadgeApi.md#get_kiosk_badges) | **GET** /kiosk-badges/{id} | Retrieve a specific kiosk badge
+*RipplingRb::KioskBadgeApi* | [**list_kiosk_badges**](docs/KioskBadgeApi.md#list_kiosk_badges) | **GET** /kiosk-badges | List kiosk badges
+*RipplingRb::KioskBadgeApi* | [**update_kiosk_badges**](docs/KioskBadgeApi.md#update_kiosk_badges) | **PATCH** /kiosk-badges/{id} | Update a kiosk badge
+*RipplingRb::LeaveBalancesApi* | [**get_leave_balances**](docs/LeaveBalancesApi.md#get_leave_balances) | **GET** /leave-balances/{id} | Retrieve a specific leave balance
+*RipplingRb::LeaveBalancesApi* | [**list_leave_balances**](docs/LeaveBalancesApi.md#list_leave_balances) | **GET** /leave-balances | List leave balances
+*RipplingRb::LeaveRequestsApi* | [**create_leave_requests**](docs/LeaveRequestsApi.md#create_leave_requests) | **POST** /leave-requests | Create a new leave request
+*RipplingRb::LeaveRequestsApi* | [**get_leave_requests**](docs/LeaveRequestsApi.md#get_leave_requests) | **GET** /leave-requests/{id} | Retrieve a specific leave request
+*RipplingRb::LeaveRequestsApi* | [**list_leave_requests**](docs/LeaveRequestsApi.md#list_leave_requests) | **GET** /leave-requests | List leave requests
+*RipplingRb::LeaveRequestsApi* | [**update_leave_requests**](docs/LeaveRequestsApi.md#update_leave_requests) | **PATCH** /leave-requests/{id} | Update a leave request
+*RipplingRb::LeaveTypesApi* | [**get_leave_types**](docs/LeaveTypesApi.md#get_leave_types) | **GET** /leave-types/{id} | Retrieve a specific leave type
+*RipplingRb::LeaveTypesApi* | [**list_leave_types**](docs/LeaveTypesApi.md#list_leave_types) | **GET** /leave-types | List leave types
+*RipplingRb::LegalEntitiesApi* | [**get_legal_entities**](docs/LegalEntitiesApi.md#get_legal_entities) | **GET** /legal-entities/{id} | Retrieve a specific legal entity
+*RipplingRb::LegalEntitiesApi* | [**list_legal_entities**](docs/LegalEntitiesApi.md#list_legal_entities) | **GET** /legal-entities | List legal entities
 *RipplingRb::MeApi* | [**list_sso_me**](docs/MeApi.md#list_sso_me) | **GET** /sso-me | Retrieve my SSO information
 *RipplingRb::ObjectCategoriesApi* | [**create_object_categories**](docs/ObjectCategoriesApi.md#create_object_categories) | **POST** /object-categories/ | Create a new object category
 *RipplingRb::ObjectCategoriesApi* | [**delete_object_categories**](docs/ObjectCategoriesApi.md#delete_object_categories) | **DELETE** /object-categories/{id}/ | Delete a object category
 *RipplingRb::ObjectCategoriesApi* | [**get_object_categories**](docs/ObjectCategoriesApi.md#get_object_categories) | **GET** /object-categories/{id}/ | Retrieve a specific object category
 *RipplingRb::ObjectCategoriesApi* | [**list_object_categories**](docs/ObjectCategoriesApi.md#list_object_categories) | **GET** /object-categories/ | List object categories
 *RipplingRb::ObjectCategoriesApi* | [**update_object_categories**](docs/ObjectCategoriesApi.md#update_object_categories) | **PATCH** /object-categories/{id}/ | Update a object category
+*RipplingRb::ShiftInputsApi* | [**create_shift_inputs**](docs/ShiftInputsApi.md#create_shift_inputs) | **POST** /shift-inputs | Create a new shift input
+*RipplingRb::ShiftInputsApi* | [**delete_shift_inputs**](docs/ShiftInputsApi.md#delete_shift_inputs) | **DELETE** /shift-inputs/{id} | Delete a shift input
+*RipplingRb::ShiftInputsApi* | [**get_shift_inputs**](docs/ShiftInputsApi.md#get_shift_inputs) | **GET** /shift-inputs/{id} | Retrieve a specific shift input
+*RipplingRb::ShiftInputsApi* | [**list_shift_inputs**](docs/ShiftInputsApi.md#list_shift_inputs) | **GET** /shift-inputs | List shift inputs
+*RipplingRb::ShiftInputsApi* | [**update_shift_inputs**](docs/ShiftInputsApi.md#update_shift_inputs) | **PATCH** /shift-inputs/{id} | Update a shift input
 *RipplingRb::SupergroupsApi* | [**get_supergroups**](docs/SupergroupsApi.md#get_supergroups) | **GET** /supergroups/{id} | Retrieve a specific supergroup
 *RipplingRb::SupergroupsApi* | [**list_supergroups**](docs/SupergroupsApi.md#list_supergroups) | **GET** /supergroups | List supergroups
 *RipplingRb::SupergroupsApi* | [**list_supergroups__group_id_exclusion_members**](docs/SupergroupsApi.md#list_supergroups__group_id_exclusion_members) | **GET** /supergroups/{group_id}/exclusion-members | List supergroup exclusion members
@@ -138,6 +173,17 @@ Class | Method | HTTP request | Description
 *RipplingRb::SupergroupsApi* | [**update_supergroups__group_id_inclusion_members**](docs/SupergroupsApi.md#update_supergroups__group_id_inclusion_members) | **PATCH** /supergroups/{group_id}/inclusion-members | Update supergroup inclusion members
 *RipplingRb::TeamsApi* | [**get_teams**](docs/TeamsApi.md#get_teams) | **GET** /teams/{id} | Retrieve a specific team
 *RipplingRb::TeamsApi* | [**list_teams**](docs/TeamsApi.md#list_teams) | **GET** /teams | List teams
+*RipplingRb::TimeEntriesApi* | [**create_time_entries**](docs/TimeEntriesApi.md#create_time_entries) | **POST** /time-entries | Create a new time entry
+*RipplingRb::TimeEntriesApi* | [**delete_time_entries**](docs/TimeEntriesApi.md#delete_time_entries) | **DELETE** /time-entries/{id} | Delete a time entry
+*RipplingRb::TimeEntriesApi* | [**get_time_cards**](docs/TimeEntriesApi.md#get_time_cards) | **GET** /time-cards/{id} | Retrieve a specific time card
+*RipplingRb::TimeEntriesApi* | [**get_time_entries**](docs/TimeEntriesApi.md#get_time_entries) | **GET** /time-entries/{id} | Retrieve a specific time entry
+*RipplingRb::TimeEntriesApi* | [**list_time_cards**](docs/TimeEntriesApi.md#list_time_cards) | **GET** /time-cards | List time cards
+*RipplingRb::TimeEntriesApi* | [**list_time_entries**](docs/TimeEntriesApi.md#list_time_entries) | **GET** /time-entries | List time entries
+*RipplingRb::TimeEntriesApi* | [**update_time_entries**](docs/TimeEntriesApi.md#update_time_entries) | **PATCH** /time-entries/{id} | Update a time entry
+*RipplingRb::TracksAndLevelsApi* | [**get_levels**](docs/TracksAndLevelsApi.md#get_levels) | **GET** /levels/{id} | Retrieve a specific level
+*RipplingRb::TracksAndLevelsApi* | [**get_tracks**](docs/TracksAndLevelsApi.md#get_tracks) | **GET** /tracks/{id} | Retrieve a specific track
+*RipplingRb::TracksAndLevelsApi* | [**list_levels**](docs/TracksAndLevelsApi.md#list_levels) | **GET** /levels | List levels
+*RipplingRb::TracksAndLevelsApi* | [**list_tracks**](docs/TracksAndLevelsApi.md#list_tracks) | **GET** /tracks | List tracks
 *RipplingRb::UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /users/{id} | Retrieve a specific user
 *RipplingRb::UsersApi* | [**list_users**](docs/UsersApi.md#list_users) | **GET** /users | List users
 *RipplingRb::WorkLocationsApi* | [**get_work_locations**](docs/WorkLocationsApi.md#get_work_locations) | **GET** /work-locations/{id} | Retrieve a specific work location
@@ -179,28 +225,47 @@ Class | Method | HTTP request | Description
  - [RipplingRb::Department](docs/Department.md)
  - [RipplingRb::Email](docs/Email.md)
  - [RipplingRb::EntitlementModel](docs/EntitlementModel.md)
+ - [RipplingRb::GetCompensations200Response](docs/GetCompensations200Response.md)
  - [RipplingRb::GetDepartments200Response](docs/GetDepartments200Response.md)
  - [RipplingRb::GetEmploymentTypes200Response](docs/GetEmploymentTypes200Response.md)
+ - [RipplingRb::GetJobCodes200Response](docs/GetJobCodes200Response.md)
+ - [RipplingRb::GetJobDimensions200Response](docs/GetJobDimensions200Response.md)
+ - [RipplingRb::GetKioskBadges200Response](docs/GetKioskBadges200Response.md)
+ - [RipplingRb::GetLeaveBalances200Response](docs/GetLeaveBalances200Response.md)
+ - [RipplingRb::GetLeaveRequests200Response](docs/GetLeaveRequests200Response.md)
+ - [RipplingRb::GetLeaveTypes200Response](docs/GetLeaveTypes200Response.md)
+ - [RipplingRb::GetLegalEntities200Response](docs/GetLegalEntities200Response.md)
+ - [RipplingRb::GetLevels200Response](docs/GetLevels200Response.md)
+ - [RipplingRb::GetShiftInputs200Response](docs/GetShiftInputs200Response.md)
  - [RipplingRb::GetSupergroups200Response](docs/GetSupergroups200Response.md)
  - [RipplingRb::GetTeams200Response](docs/GetTeams200Response.md)
+ - [RipplingRb::GetTimeCards200Response](docs/GetTimeCards200Response.md)
+ - [RipplingRb::GetTimeEntries200Response](docs/GetTimeEntries200Response.md)
+ - [RipplingRb::GetTracks200Response](docs/GetTracks200Response.md)
  - [RipplingRb::GetUsers200Response](docs/GetUsers200Response.md)
  - [RipplingRb::GetWorkLocations200Response](docs/GetWorkLocations200Response.md)
  - [RipplingRb::GetWorkers200Response](docs/GetWorkers200Response.md)
  - [RipplingRb::GroupMember](docs/GroupMember.md)
  - [RipplingRb::JobCode](docs/JobCode.md)
+ - [RipplingRb::JobCodeRequest](docs/JobCodeRequest.md)
  - [RipplingRb::JobCodeSummary](docs/JobCodeSummary.md)
  - [RipplingRb::JobDimension](docs/JobDimension.md)
+ - [RipplingRb::JobDimensionRequest](docs/JobDimensionRequest.md)
  - [RipplingRb::JobRequisition](docs/JobRequisition.md)
  - [RipplingRb::JobShift](docs/JobShift.md)
  - [RipplingRb::JobShiftRequest](docs/JobShiftRequest.md)
  - [RipplingRb::LeaveBalance](docs/LeaveBalance.md)
  - [RipplingRb::LeaveRequest](docs/LeaveRequest.md)
+ - [RipplingRb::LeaveRequestRequest](docs/LeaveRequestRequest.md)
  - [RipplingRb::LeaveType](docs/LeaveType.md)
  - [RipplingRb::LegalEntity](docs/LegalEntity.md)
  - [RipplingRb::Level](docs/Level.md)
  - [RipplingRb::ListByQueryCustomObjectsCustomObjectApiNameRecords200Response](docs/ListByQueryCustomObjectsCustomObjectApiNameRecords200Response.md)
  - [RipplingRb::ListByQueryCustomObjectsCustomObjectApiNameRecordsRequest](docs/ListByQueryCustomObjectsCustomObjectApiNameRecordsRequest.md)
+ - [RipplingRb::ListCandidateApplications200Response](docs/ListCandidateApplications200Response.md)
+ - [RipplingRb::ListCandidates200Response](docs/ListCandidates200Response.md)
  - [RipplingRb::ListCompanies200Response](docs/ListCompanies200Response.md)
+ - [RipplingRb::ListCompensations200Response](docs/ListCompensations200Response.md)
  - [RipplingRb::ListCustomFields200Response](docs/ListCustomFields200Response.md)
  - [RipplingRb::ListCustomObjects200Response](docs/ListCustomObjects200Response.md)
  - [RipplingRb::ListCustomObjectsCustomObjectApiNameFields200Response](docs/ListCustomObjectsCustomObjectApiNameFields200Response.md)
@@ -208,10 +273,23 @@ Class | Method | HTTP request | Description
  - [RipplingRb::ListDepartments200Response](docs/ListDepartments200Response.md)
  - [RipplingRb::ListEmploymentTypes200Response](docs/ListEmploymentTypes200Response.md)
  - [RipplingRb::ListEntitlements200Response](docs/ListEntitlements200Response.md)
+ - [RipplingRb::ListJobCodes200Response](docs/ListJobCodes200Response.md)
+ - [RipplingRb::ListJobDimensions200Response](docs/ListJobDimensions200Response.md)
+ - [RipplingRb::ListJobRequisitions200Response](docs/ListJobRequisitions200Response.md)
+ - [RipplingRb::ListKioskBadges200Response](docs/ListKioskBadges200Response.md)
+ - [RipplingRb::ListLeaveBalances200Response](docs/ListLeaveBalances200Response.md)
+ - [RipplingRb::ListLeaveRequests200Response](docs/ListLeaveRequests200Response.md)
+ - [RipplingRb::ListLeaveTypes200Response](docs/ListLeaveTypes200Response.md)
+ - [RipplingRb::ListLegalEntities200Response](docs/ListLegalEntities200Response.md)
+ - [RipplingRb::ListLevels200Response](docs/ListLevels200Response.md)
  - [RipplingRb::ListObjectCategories200Response](docs/ListObjectCategories200Response.md)
+ - [RipplingRb::ListShiftInputs200Response](docs/ListShiftInputs200Response.md)
  - [RipplingRb::ListSupergroups200Response](docs/ListSupergroups200Response.md)
  - [RipplingRb::ListSupergroupsGroupIdMembers200Response](docs/ListSupergroupsGroupIdMembers200Response.md)
  - [RipplingRb::ListTeams200Response](docs/ListTeams200Response.md)
+ - [RipplingRb::ListTimeCards200Response](docs/ListTimeCards200Response.md)
+ - [RipplingRb::ListTimeEntries200Response](docs/ListTimeEntries200Response.md)
+ - [RipplingRb::ListTracks200Response](docs/ListTracks200Response.md)
  - [RipplingRb::ListUsers200Response](docs/ListUsers200Response.md)
  - [RipplingRb::ListWorkLocations200Response](docs/ListWorkLocations200Response.md)
  - [RipplingRb::ListWorkers200Response](docs/ListWorkers200Response.md)
@@ -231,6 +309,7 @@ Class | Method | HTTP request | Description
  - [RipplingRb::SSOMe](docs/SSOMe.md)
  - [RipplingRb::Segments](docs/Segments.md)
  - [RipplingRb::ShiftInput](docs/ShiftInput.md)
+ - [RipplingRb::ShiftInputRequest](docs/ShiftInputRequest.md)
  - [RipplingRb::ShiftInputValue](docs/ShiftInputValue.md)
  - [RipplingRb::ShiftInputValueRequest](docs/ShiftInputValueRequest.md)
  - [RipplingRb::Supergroup](docs/Supergroup.md)
@@ -241,8 +320,10 @@ Class | Method | HTTP request | Description
  - [RipplingRb::TimeEntry](docs/TimeEntry.md)
  - [RipplingRb::TimeEntryComment](docs/TimeEntryComment.md)
  - [RipplingRb::TimeEntryCommentRequest](docs/TimeEntryCommentRequest.md)
+ - [RipplingRb::TimeEntryRequest](docs/TimeEntryRequest.md)
  - [RipplingRb::TimeEntrySummary](docs/TimeEntrySummary.md)
  - [RipplingRb::TimeKioskBadge](docs/TimeKioskBadge.md)
+ - [RipplingRb::TimeKioskBadgeRequest](docs/TimeKioskBadgeRequest.md)
  - [RipplingRb::Track](docs/Track.md)
  - [RipplingRb::USFields](docs/USFields.md)
  - [RipplingRb::UpdateCustomObjectsCustomObjectApiNameFieldsRequest](docs/UpdateCustomObjectsCustomObjectApiNameFieldsRequest.md)

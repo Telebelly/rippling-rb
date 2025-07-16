@@ -14,41 +14,53 @@ require 'date'
 require 'time'
 
 module RipplingRb
-  # 
-  class WorkerLocation
-    # The type of location.
+  class GetShiftInputs200Response
+    attr_accessor :__meta
+
+    # Identifier field
+    attr_accessor :id
+
+    # Record creation date
+    attr_accessor :created_at
+
+    # Record update date
+    attr_accessor :updated_at
+
+    # The creator id associated with the shift input.
+    attr_accessor :creator_id
+
+    # The creator associated with the shift input.  Expandable field
+    attr_accessor :creator
+
+    # Name of the shift unit.
+    attr_accessor :name
+
+    # Prompt for the shift unit.
+    attr_accessor :prompt
+
+    # Type of shift unit.
     attr_accessor :type
 
-    # The work location, if the worker isn't remote.
-    attr_accessor :work_location_id
+    # Two letter string designating country code which the shift input is associated.
+    attr_accessor :country_code
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    # The party that manages this shift input
+    attr_accessor :managed_by
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'__meta' => :'__meta',
+        :'id' => :'id',
+        :'created_at' => :'created_at',
+        :'updated_at' => :'updated_at',
+        :'creator_id' => :'creator_id',
+        :'creator' => :'creator',
+        :'name' => :'name',
+        :'prompt' => :'prompt',
         :'type' => :'type',
-        :'work_location_id' => :'work_location_id'
+        :'country_code' => :'country_code',
+        :'managed_by' => :'managed_by'
       }
     end
 
@@ -65,8 +77,17 @@ module RipplingRb
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'__meta' => :'MetaResponseMeta',
+        :'id' => :'String',
+        :'created_at' => :'String',
+        :'updated_at' => :'String',
+        :'creator_id' => :'String',
+        :'creator' => :'Worker',
+        :'name' => :'String',
+        :'prompt' => :'String',
         :'type' => :'String',
-        :'work_location_id' => :'String'
+        :'country_code' => :'String',
+        :'managed_by' => :'String'
       }
     end
 
@@ -76,21 +97,71 @@ module RipplingRb
       ])
     end
 
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'MetaResponse',
+      :'ShiftInput'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RipplingRb::WorkerLocation` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RipplingRb::GetShiftInputs200Response` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RipplingRb::WorkerLocation`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RipplingRb::GetShiftInputs200Response`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'__meta')
+        self.__meta = attributes[:'__meta']
+      end
+
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
+      else
+        self.id = nil
+      end
+
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
+      else
+        self.created_at = nil
+      end
+
+      if attributes.key?(:'updated_at')
+        self.updated_at = attributes[:'updated_at']
+      else
+        self.updated_at = nil
+      end
+
+      if attributes.key?(:'creator_id')
+        self.creator_id = attributes[:'creator_id']
+      end
+
+      if attributes.key?(:'creator')
+        self.creator = attributes[:'creator']
+      end
+
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
+      else
+        self.name = nil
+      end
+
+      if attributes.key?(:'prompt')
+        self.prompt = attributes[:'prompt']
+      else
+        self.prompt = nil
+      end
 
       if attributes.key?(:'type')
         self.type = attributes[:'type']
@@ -98,10 +169,14 @@ module RipplingRb
         self.type = nil
       end
 
-      if attributes.key?(:'work_location_id')
-        self.work_location_id = attributes[:'work_location_id']
+      if attributes.key?(:'country_code')
+        self.country_code = attributes[:'country_code']
       else
-        self.work_location_id = nil
+        self.country_code = nil
+      end
+
+      if attributes.key?(:'managed_by')
+        self.managed_by = attributes[:'managed_by']
       end
     end
 
@@ -110,12 +185,32 @@ module RipplingRb
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
+      if @created_at.nil?
+        invalid_properties.push('invalid value for "created_at", created_at cannot be nil.')
+      end
+
+      if @updated_at.nil?
+        invalid_properties.push('invalid value for "updated_at", updated_at cannot be nil.')
+      end
+
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @prompt.nil?
+        invalid_properties.push('invalid value for "prompt", prompt cannot be nil.')
+      end
+
       if @type.nil?
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
-      if @work_location_id.nil?
-        invalid_properties.push('invalid value for "work_location_id", work_location_id cannot be nil.')
+      if @country_code.nil?
+        invalid_properties.push('invalid value for "country_code", country_code cannot be nil.')
       end
 
       invalid_properties
@@ -125,27 +220,84 @@ module RipplingRb
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @id.nil?
+      return false if @created_at.nil?
+      return false if @updated_at.nil?
+      return false if @name.nil?
+      return false if @prompt.nil?
       return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ["REMOTE", "WORK"])
-      return false unless type_validator.valid?(@type)
-      return false if @work_location_id.nil?
+      return false if @country_code.nil?
       true
     end
 
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ["REMOTE", "WORK"])
-      unless validator.valid?(type)
-        fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
+    # Custom attribute writer method with validation
+    # @param [Object] id Value to be assigned
+    def id=(id)
+      if id.nil?
+        fail ArgumentError, 'id cannot be nil'
       end
+
+      @id = id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] created_at Value to be assigned
+    def created_at=(created_at)
+      if created_at.nil?
+        fail ArgumentError, 'created_at cannot be nil'
+      end
+
+      @created_at = created_at
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] updated_at Value to be assigned
+    def updated_at=(updated_at)
+      if updated_at.nil?
+        fail ArgumentError, 'updated_at cannot be nil'
+      end
+
+      @updated_at = updated_at
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] name Value to be assigned
+    def name=(name)
+      if name.nil?
+        fail ArgumentError, 'name cannot be nil'
+      end
+
+      @name = name
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] prompt Value to be assigned
+    def prompt=(prompt)
+      if prompt.nil?
+        fail ArgumentError, 'prompt cannot be nil'
+      end
+
+      @prompt = prompt
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] type Value to be assigned
+    def type=(type)
+      if type.nil?
+        fail ArgumentError, 'type cannot be nil'
+      end
+
       @type = type
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] work_location_id Value to be assigned
-    def work_location_id=(work_location_id)
-      @work_location_id = work_location_id
+    # @param [Object] country_code Value to be assigned
+    def country_code=(country_code)
+      if country_code.nil?
+        fail ArgumentError, 'country_code cannot be nil'
+      end
+
+      @country_code = country_code
     end
 
     # Checks equality by comparing each attribute.
@@ -153,8 +305,17 @@ module RipplingRb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          __meta == o.__meta &&
+          id == o.id &&
+          created_at == o.created_at &&
+          updated_at == o.updated_at &&
+          creator_id == o.creator_id &&
+          creator == o.creator &&
+          name == o.name &&
+          prompt == o.prompt &&
           type == o.type &&
-          work_location_id == o.work_location_id
+          country_code == o.country_code &&
+          managed_by == o.managed_by
     end
 
     # @see the `==` method
@@ -166,7 +327,7 @@ module RipplingRb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, work_location_id].hash
+      [__meta, id, created_at, updated_at, creator_id, creator, name, prompt, type, country_code, managed_by].hash
     end
 
     # Builds the object from hash

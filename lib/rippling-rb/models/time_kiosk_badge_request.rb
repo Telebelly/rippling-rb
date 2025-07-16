@@ -15,40 +15,26 @@ require 'time'
 
 module RipplingRb
   # 
-  class WorkerLocation
-    # The type of location.
-    attr_accessor :type
+  class TimeKioskBadgeRequest
+    # The ID associated with the badge. Not to be confused with the record's ID.
+    attr_accessor :badge_id
 
-    # The work location, if the worker isn't remote.
-    attr_accessor :work_location_id
+    # The ID of the worker associated with the badge.
+    attr_accessor :worker_id
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+    # The employee number of the worker associated with the badge.
+    attr_accessor :worker_number
 
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    # Whether this badge can be used with the Kiosk app.
+    attr_accessor :is_enabled
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'work_location_id' => :'work_location_id'
+        :'badge_id' => :'badge_id',
+        :'worker_id' => :'worker_id',
+        :'worker_number' => :'worker_number',
+        :'is_enabled' => :'is_enabled'
       }
     end
 
@@ -65,8 +51,10 @@ module RipplingRb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'String',
-        :'work_location_id' => :'String'
+        :'badge_id' => :'String',
+        :'worker_id' => :'String',
+        :'worker_number' => :'Integer',
+        :'is_enabled' => :'Boolean'
       }
     end
 
@@ -80,28 +68,34 @@ module RipplingRb
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RipplingRb::WorkerLocation` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RipplingRb::TimeKioskBadgeRequest` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RipplingRb::WorkerLocation`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RipplingRb::TimeKioskBadgeRequest`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.key?(:'badge_id')
+        self.badge_id = attributes[:'badge_id']
       else
-        self.type = nil
+        self.badge_id = nil
       end
 
-      if attributes.key?(:'work_location_id')
-        self.work_location_id = attributes[:'work_location_id']
-      else
-        self.work_location_id = nil
+      if attributes.key?(:'worker_id')
+        self.worker_id = attributes[:'worker_id']
+      end
+
+      if attributes.key?(:'worker_number')
+        self.worker_number = attributes[:'worker_number']
+      end
+
+      if attributes.key?(:'is_enabled')
+        self.is_enabled = attributes[:'is_enabled']
       end
     end
 
@@ -110,12 +104,8 @@ module RipplingRb
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
-      if @work_location_id.nil?
-        invalid_properties.push('invalid value for "work_location_id", work_location_id cannot be nil.')
+      if @badge_id.nil?
+        invalid_properties.push('invalid value for "badge_id", badge_id cannot be nil.')
       end
 
       invalid_properties
@@ -125,27 +115,18 @@ module RipplingRb
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ["REMOTE", "WORK"])
-      return false unless type_validator.valid?(@type)
-      return false if @work_location_id.nil?
+      return false if @badge_id.nil?
       true
     end
 
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ["REMOTE", "WORK"])
-      unless validator.valid?(type)
-        fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
-      end
-      @type = type
-    end
-
     # Custom attribute writer method with validation
-    # @param [Object] work_location_id Value to be assigned
-    def work_location_id=(work_location_id)
-      @work_location_id = work_location_id
+    # @param [Object] badge_id Value to be assigned
+    def badge_id=(badge_id)
+      if badge_id.nil?
+        fail ArgumentError, 'badge_id cannot be nil'
+      end
+
+      @badge_id = badge_id
     end
 
     # Checks equality by comparing each attribute.
@@ -153,8 +134,10 @@ module RipplingRb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          work_location_id == o.work_location_id
+          badge_id == o.badge_id &&
+          worker_id == o.worker_id &&
+          worker_number == o.worker_number &&
+          is_enabled == o.is_enabled
     end
 
     # @see the `==` method
@@ -166,7 +149,7 @@ module RipplingRb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, work_location_id].hash
+      [badge_id, worker_id, worker_number, is_enabled].hash
     end
 
     # Builds the object from hash

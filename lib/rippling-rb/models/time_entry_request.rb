@@ -15,12 +15,42 @@ require 'time'
 
 module RipplingRb
   # 
-  class WorkerLocation
-    # The type of location.
-    attr_accessor :type
+  class TimeEntryRequest
+    # The ID of the worker associated with the time entry.
+    attr_accessor :worker_id
 
-    # The work location, if the worker isn't remote.
-    attr_accessor :work_location_id
+    # The duration of the time entry.
+    attr_accessor :duration
+
+    # The date of the time entry if using duration.
+    attr_accessor :start_date
+
+    # The comments associated with the time entry.
+    attr_accessor :comments
+
+    # The job shifts worked during the time entry.
+    attr_accessor :job_shifts
+
+    # The breaks taken during the time entry.
+    attr_accessor :breaks
+
+    # The tags associated with the time entry.
+    attr_accessor :tags
+
+    # The unique key of the time entry in an outside system. If set, no other time entry with the same key can be created.
+    attr_accessor :idempotency_key
+
+    # Whether the time entry should create an extra hours run.
+    attr_accessor :create_extra_hours_run
+
+    # The status of the time entry.
+    attr_accessor :status
+
+    # The pay period associated with the time card.
+    attr_accessor :pay_period
+
+    # Arbitrary shift inputs collected on the time entry
+    attr_accessor :shift_input_values
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -47,8 +77,18 @@ module RipplingRb
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'work_location_id' => :'work_location_id'
+        :'worker_id' => :'worker_id',
+        :'duration' => :'duration',
+        :'start_date' => :'start_date',
+        :'comments' => :'comments',
+        :'job_shifts' => :'job_shifts',
+        :'breaks' => :'breaks',
+        :'tags' => :'tags',
+        :'idempotency_key' => :'idempotency_key',
+        :'create_extra_hours_run' => :'create_extra_hours_run',
+        :'status' => :'status',
+        :'pay_period' => :'pay_period',
+        :'shift_input_values' => :'shift_input_values'
       }
     end
 
@@ -65,8 +105,18 @@ module RipplingRb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'String',
-        :'work_location_id' => :'String'
+        :'worker_id' => :'String',
+        :'duration' => :'Float',
+        :'start_date' => :'String',
+        :'comments' => :'Array<TimeEntryCommentRequest>',
+        :'job_shifts' => :'Array<JobShiftRequest>',
+        :'breaks' => :'Array<BreakRequest>',
+        :'tags' => :'Array<String>',
+        :'idempotency_key' => :'String',
+        :'create_extra_hours_run' => :'Boolean',
+        :'status' => :'String',
+        :'pay_period' => :'PayPeriodRequest',
+        :'shift_input_values' => :'Array<ShiftInputValueRequest>'
       }
     end
 
@@ -80,28 +130,76 @@ module RipplingRb
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RipplingRb::WorkerLocation` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RipplingRb::TimeEntryRequest` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RipplingRb::WorkerLocation`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RipplingRb::TimeEntryRequest`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.key?(:'worker_id')
+        self.worker_id = attributes[:'worker_id']
       else
-        self.type = nil
+        self.worker_id = nil
       end
 
-      if attributes.key?(:'work_location_id')
-        self.work_location_id = attributes[:'work_location_id']
-      else
-        self.work_location_id = nil
+      if attributes.key?(:'duration')
+        self.duration = attributes[:'duration']
+      end
+
+      if attributes.key?(:'start_date')
+        self.start_date = attributes[:'start_date']
+      end
+
+      if attributes.key?(:'comments')
+        if (value = attributes[:'comments']).is_a?(Array)
+          self.comments = value
+        end
+      end
+
+      if attributes.key?(:'job_shifts')
+        if (value = attributes[:'job_shifts']).is_a?(Array)
+          self.job_shifts = value
+        end
+      end
+
+      if attributes.key?(:'breaks')
+        if (value = attributes[:'breaks']).is_a?(Array)
+          self.breaks = value
+        end
+      end
+
+      if attributes.key?(:'tags')
+        if (value = attributes[:'tags']).is_a?(Array)
+          self.tags = value
+        end
+      end
+
+      if attributes.key?(:'idempotency_key')
+        self.idempotency_key = attributes[:'idempotency_key']
+      end
+
+      if attributes.key?(:'create_extra_hours_run')
+        self.create_extra_hours_run = attributes[:'create_extra_hours_run']
+      end
+
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
+      end
+
+      if attributes.key?(:'pay_period')
+        self.pay_period = attributes[:'pay_period']
+      end
+
+      if attributes.key?(:'shift_input_values')
+        if (value = attributes[:'shift_input_values']).is_a?(Array)
+          self.shift_input_values = value
+        end
       end
     end
 
@@ -110,12 +208,8 @@ module RipplingRb
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
-      if @work_location_id.nil?
-        invalid_properties.push('invalid value for "work_location_id", work_location_id cannot be nil.')
+      if @worker_id.nil?
+        invalid_properties.push('invalid value for "worker_id", worker_id cannot be nil.')
       end
 
       invalid_properties
@@ -125,27 +219,30 @@ module RipplingRb
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ["REMOTE", "WORK"])
-      return false unless type_validator.valid?(@type)
-      return false if @work_location_id.nil?
+      return false if @worker_id.nil?
+      status_validator = EnumAttributeValidator.new('String', ["DRAFT", "APPROVED", "PAID", "FINALIZED"])
+      return false unless status_validator.valid?(@status)
       true
     end
 
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ["REMOTE", "WORK"])
-      unless validator.valid?(type)
-        fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
+    # Custom attribute writer method with validation
+    # @param [Object] worker_id Value to be assigned
+    def worker_id=(worker_id)
+      if worker_id.nil?
+        fail ArgumentError, 'worker_id cannot be nil'
       end
-      @type = type
+
+      @worker_id = worker_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] work_location_id Value to be assigned
-    def work_location_id=(work_location_id)
-      @work_location_id = work_location_id
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] status Object to be assigned
+    def status=(status)
+      validator = EnumAttributeValidator.new('String', ["DRAFT", "APPROVED", "PAID", "FINALIZED"])
+      unless validator.valid?(status)
+        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
+      end
+      @status = status
     end
 
     # Checks equality by comparing each attribute.
@@ -153,8 +250,18 @@ module RipplingRb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          work_location_id == o.work_location_id
+          worker_id == o.worker_id &&
+          duration == o.duration &&
+          start_date == o.start_date &&
+          comments == o.comments &&
+          job_shifts == o.job_shifts &&
+          breaks == o.breaks &&
+          tags == o.tags &&
+          idempotency_key == o.idempotency_key &&
+          create_extra_hours_run == o.create_extra_hours_run &&
+          status == o.status &&
+          pay_period == o.pay_period &&
+          shift_input_values == o.shift_input_values
     end
 
     # @see the `==` method
@@ -166,7 +273,7 @@ module RipplingRb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, work_location_id].hash
+      [worker_id, duration, start_date, comments, job_shifts, breaks, tags, idempotency_key, create_extra_hours_run, status, pay_period, shift_input_values].hash
     end
 
     # Builds the object from hash

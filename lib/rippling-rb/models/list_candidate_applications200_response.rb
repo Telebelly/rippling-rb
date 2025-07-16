@@ -14,41 +14,20 @@ require 'date'
 require 'time'
 
 module RipplingRb
-  # 
-  class WorkerLocation
-    # The type of location.
-    attr_accessor :type
+  class ListCandidateApplications200Response
+    attr_accessor :__meta
 
-    # The work location, if the worker isn't remote.
-    attr_accessor :work_location_id
+    attr_accessor :results
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    # A link to the next page of responses.
+    attr_accessor :next_link
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'work_location_id' => :'work_location_id'
+        :'__meta' => :'__meta',
+        :'results' => :'results',
+        :'next_link' => :'next_link'
       }
     end
 
@@ -65,8 +44,9 @@ module RipplingRb
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'String',
-        :'work_location_id' => :'String'
+        :'__meta' => :'RedactedFields',
+        :'results' => :'Array<Application>',
+        :'next_link' => :'String'
       }
     end
 
@@ -80,28 +60,30 @@ module RipplingRb
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RipplingRb::WorkerLocation` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RipplingRb::ListCandidateApplications200Response` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RipplingRb::WorkerLocation`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RipplingRb::ListCandidateApplications200Response`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'type')
-        self.type = attributes[:'type']
-      else
-        self.type = nil
+      if attributes.key?(:'__meta')
+        self.__meta = attributes[:'__meta']
       end
 
-      if attributes.key?(:'work_location_id')
-        self.work_location_id = attributes[:'work_location_id']
-      else
-        self.work_location_id = nil
+      if attributes.key?(:'results')
+        if (value = attributes[:'results']).is_a?(Array)
+          self.results = value
+        end
+      end
+
+      if attributes.key?(:'next_link')
+        self.next_link = attributes[:'next_link']
       end
     end
 
@@ -110,14 +92,6 @@ module RipplingRb
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
-      if @work_location_id.nil?
-        invalid_properties.push('invalid value for "work_location_id", work_location_id cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -125,27 +99,7 @@ module RipplingRb
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ["REMOTE", "WORK"])
-      return false unless type_validator.valid?(@type)
-      return false if @work_location_id.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ["REMOTE", "WORK"])
-      unless validator.valid?(type)
-        fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
-      end
-      @type = type
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] work_location_id Value to be assigned
-    def work_location_id=(work_location_id)
-      @work_location_id = work_location_id
     end
 
     # Checks equality by comparing each attribute.
@@ -153,8 +107,9 @@ module RipplingRb
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          work_location_id == o.work_location_id
+          __meta == o.__meta &&
+          results == o.results &&
+          next_link == o.next_link
     end
 
     # @see the `==` method
@@ -166,7 +121,7 @@ module RipplingRb
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, work_location_id].hash
+      [__meta, results, next_link].hash
     end
 
     # Builds the object from hash
