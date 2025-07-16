@@ -145,10 +145,6 @@ module RipplingRb
     # Custom attribute writer method with validation
     # @param [Object] work_location_id Value to be assigned
     def work_location_id=(work_location_id)
-      if work_location_id.nil?
-        fail ArgumentError, 'work_location_id cannot be nil'
-      end
-
       @work_location_id = work_location_id
     end
 
