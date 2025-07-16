@@ -1,0 +1,22 @@
+# OpenapiClient::Email
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **value** | **String** | A valid email address. | [optional] |
+| **type** | **String** | The classification of the email. | [optional] |
+| **display** | **String** | The display value of the email address. | [optional] |
+
+## Example
+
+```ruby
+require 'openapi_client'
+
+instance = OpenapiClient::Email.new(
+  value: null,
+  type: null,
+  display: null
+)
+```
+
