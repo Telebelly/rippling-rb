@@ -116,6 +116,7 @@ module RipplingRb
       query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
       query_params[:'expand'] = opts[:'expand'] if !opts[:'expand'].nil?
       query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'cursor'] = opts[:'cursor'] if !opts[:'cursor'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
