@@ -51,7 +51,7 @@ GEM
       stringio
     racc (1.8.1)
     rainbow (3.1.1)
-    rake (13.0.6)
+    rake (13.4.2)
     reline (0.7.0)
       io-console (~> 0.5)
     rspec (3.13.2)
@@ -87,7 +87,7 @@ PLATFORMS
 
 DEPENDENCIES
   pry-byebug
-  rake (~> 13.0.1)
+  rake (~> 13.4.2)
   rippling-rb!
   rspec (~> 3.6, >= 3.6.0)
   rubocop (~> 0.66.0)
